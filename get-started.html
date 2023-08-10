@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started with StudyRecon</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Navigation Bar (assuming you still want this) -->
+    <nav>
+        <div id="nav-logo"><b>StudyRecon</b></div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./report-gallery.html">Report Gallery</a></li>
+            <li><a href="./get-started.html" class="active">Getting started</a></li>
+            <li><a href="https://study-recon-dmcvjtmi2q-ue.a.run.app/">App</a></li>
+        </ul>
+    </nav>
+
+    <h1>Get Started with StudyRecon</h1>
+
+    <p>Enter your email and research prompt to begin. For advanced settings, sign up and use our app.</p>
+
+    <form action="/submit-path" method="post" class="signup-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="research-prompt">Research Prompt:</label>
+        <textarea id="research-prompt" name="research-prompt" rows="4" required></textarea>
+
+        <button type="submit">Get Started</button>
+    </form>
+
+    <p>Want to specify sources, search parameters, and more? <a href="/signup-path">Create an account</a> and explore the full app.</p>
+
+</div>
+
+</body>
+</html>

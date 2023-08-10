@@ -62,13 +62,21 @@ strong {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
+/* a:hover {
+  text-decoration: underline;
+} */
+
 /* Placeholder for a hero image */
 .hero-image {
   width: 100%;
-  height: 550px;
-  background: url("./img/studyrecon-emblem-3.png")
-    no-repeat center center;
+  height: 600px;
+  background: url("./img/studyrecon-emblem-green-1-upscale.png") no-repeat center center;
   background-size: cover;
+  /* background-size: contain; */
   margin-bottom: 20px;
   opacity: 0.9;
 }
@@ -80,30 +88,30 @@ section {
 
 /* Navigation Bar Styles */
 nav {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between logo and menu */
-    align-items: center; /* Vertically center align items */
-    margin-bottom: 20px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Vertically center align items */
+  margin-bottom: 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex; /* Makes the list items appear in a line */
-    align-items: center; /* Vertically center align items */
-    margin: 0; /* Reset default margin */
-    padding: 0; /* Reset default padding */
+  list-style-type: none;
+  display: flex; /* Makes the list items appear in a line */
+  align-items: center; /* Vertically center align items */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
 }
 
 nav li {
-    margin-left: 20px; /* Spacing between each item */
+  margin-left: 20px; /* Spacing between each item */
 }
 
 nav a {
   text-decoration: none; /* Removes the underline from links */
   color: #555; /* Link color */
   font-weight: bold; /* Makes the link text bold */
-  padding: 5px 10px; 
-  border-radius: 5px; 
+  padding: 5px 10px;
+  border-radius: 5px;
   transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
@@ -113,51 +121,104 @@ nav a:hover {
 }
 
 #nav-logo {
-    height: 40px; /* Adjust as needed */
-    margin-right: 20px; /* Spacing between logo and menu */
-    display: block; 
-    align-self: center; /* Vertically center the logo */
+  height: 40px; /* Adjust as needed */
+  margin-right: 20px; /* Spacing between logo and menu */
+  display: block;
+  align-self: center; /* Vertically center the logo */
+}
+
+#nav-logo {
+  font-family: "Arial", sans-serif; /* You can use a different font if you have a preference */
+  font-size: 24px; /* Adjust size as needed */
+  color: #333; /* Logo text color */
+  background-color: #ffffff; /* Background color for the logo */
+  padding: 10px 5px; /* Space around the text */
+  border-radius: 5px; /* Rounded corners */
+  letter-spacing: 1px; /* Space between letters for a more distinctive look */
+  text-transform: uppercase; /* Makes the text all uppercase */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 nav a.active {
-    background-color: #eee;
-    color: #333;
+  background-color: #eee;
+  color: #333;
 }
 
 /* Gallery Styles */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .report-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    overflow: hidden; /* This will ensure that anything outside the box is hidden (cropped) */
-    height: 250px; /* Adjust this value to crop more or less from the bottom */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden; /* This will ensure that anything outside the box is hidden (cropped) */
+  height: 250px; /* Adjust this value to crop more or less from the bottom */
 }
 
 .report-item img {
-    max-width: 80%; /* Adjust this to make the thumbnail smaller or larger */
-    opacity: 0.4; /* Reduce opacity */
-    transition: opacity 0.3s; /* Smooth transition for hover effect */
-    border-radius: 5px;
-    height: 100px;
-    overflow: hidden;
+  max-width: 80%; /* Adjust this to make the thumbnail smaller or larger */
+  opacity: 0.4; /* Reduce opacity */
+  transition: opacity 0.3s; /* Smooth transition for hover effect */
+  border-radius: 5px;
+  height: 100px;
+  overflow: hidden;
 }
 
 .report-item:hover img {
-    opacity: 1; /* Restore full opacity on hover */
+  opacity: 1; /* Restore full opacity on hover */
 }
 
 .report-item a {
-    text-decoration: none; /* Removes the underline from links */
-    color: inherit; /* Ensures the text color remains consistent */
+  text-decoration: none; /* Removes the underline from links */
+  color: inherit; /* Ensures the text color remains consistent */
 }
 
 .report-item:hover {
-    background-color: #f5f5f5; /* Add a subtle background color on hover */
+  background-color: #f5f5f5; /* Add a subtle background color on hover */
+}
+
+/* ... (existing styles) ... */
+
+/* Signup Form Styles */
+.signup-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.signup-form input, .signup-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.signup-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+    background-color: #555;
 }
