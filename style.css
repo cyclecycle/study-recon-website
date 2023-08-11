@@ -1,4 +1,7 @@
-/* Reset some default browser styles */
+html {
+  overflow-y: scroll;
+}
+
 body,
 h1,
 h2,
