@@ -22,6 +22,17 @@ body {
   margin: 40px;
 }
 
+input,
+textarea {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .center-heading {
   text-align: center;
   font-size: 2.5em;
@@ -60,30 +71,36 @@ body {
   text-align: center;
 }
 
-.cta-button {
-  display: block;
-  width: 180px;
-  height: 50px;
-  margin: 30px auto; /* centers the button */
+button.secondary {
   background-color: var(--secondary-color);
   text-align: center;
   border-radius: 5px;
+  border: none;
   color: white;
-  font-weight: bold;
-  line-height: 50px; /* vertically centers the text in the button */
+  line-height: 40px;
+  font-size: 1em;
+  padding: 0 20px;
   text-decoration: none;
   transition: background-color 0.3s;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-in-out 0s forwards;
+  cursor: pointer;
 }
 
-.cta-button:hover {
+button.secondary:hover {
   background-color: var(--secondary-color-dark);
   text-decoration: none;
   color: white;
 }
 
-/* Your current CSS properties for other elements ... */
+.cta-button {
+  display: block;
+  width: 180px;
+  height: 50px;
+  margin: 30px auto;
+  font-weight: bold;
+  line-height: 50px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out 0s forwards;
+}
 
 /* Container to center content */
 .container {
@@ -291,8 +308,8 @@ nav a.active {
 
 /* ... (existing styles) ... */
 
-/* Signup Form Styles */
-.signup-form {
+/* Form Styles */
+.form {
   max-width: 500px;
   margin: 20px auto;
   padding: 20px;
@@ -301,14 +318,15 @@ nav a.active {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.signup-form label {
+.form label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.signup-form input,
-.signup-form textarea {
+.form input,
+.form textarea {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -317,7 +335,24 @@ nav a.active {
   font-size: 16px;
 }
 
-.signup-form button {
+.form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* #research-prompt-input {
+  height: 80px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 10px;
+} */
+
+/* .form button {
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
@@ -327,9 +362,9 @@ nav a.active {
   transition: background-color 0.3s;
 }
 
-.signup-form button:hover {
+.form button:hover {
   background-color: #555;
-}
+} */
 
 footer {
   width: 100%;
@@ -356,11 +391,10 @@ footer {
 .content-section {
   /* padding: 20px 0; */
   max-width: 700px; /* Or another preferred value */
-  margin: 0 auto;  /* This will center the section if its width is less than its container's width */
+  margin: 0 auto; /* This will center the section if its width is less than its container's width */
   padding: 20px 0;
   border-bottom: 1px solid #e1e1e1;
 }
-
 
 .section-title {
   font-size: 1.5em;
@@ -379,4 +413,12 @@ footer {
 /* Adding a different background color for alternating sections to further differentiate */
 .content-section:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.mt {
+  margin-top: 20px;
 }
