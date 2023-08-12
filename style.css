@@ -36,6 +36,10 @@ a:hover {
   text-decoration: none;
 }
 
+.logo-text-divider {
+  color: var(--material-color-grey-300)
+}
+
 .center-heading {
   text-align: center;
   font-size: 2.5em;
@@ -397,6 +401,10 @@ footer {
   margin: 0 auto; /* This will center the section if its width is less than its container's width */
   padding: 20px 0;
   border-bottom: 1px solid #e1e1e1;
+  /* display: flex; */
+  /* flex-wrap: wrap;   */
+  /* justify-content: space-between;  */
+  /* align-items: center;  */
 }
 
 .section-title {
@@ -411,6 +419,14 @@ footer {
   line-height: 1.5;
   color: #555;
   padding: 16px 30px;
+  flex: 0 0 50%;
+}
+
+.img-container img {
+  height: 250px;
+  padding: 16px 30px;  /* Adding some spacing for aesthetics */
+  margin: 0 auto;  /* This will center the image */
+  display: block;  /* This will remove the extra space below the image */
 }
 
 /* Adding a different background color for alternating sections to further differentiate */
