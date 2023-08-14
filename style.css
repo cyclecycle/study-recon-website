@@ -285,6 +285,10 @@ nav a.active {
   transition: background-color 0.3s, border 0.3s;
 }
 
+.report-item h3 {
+  height: 90px;
+}
+
 .report-link {
   text-decoration: none;
   color: inherit;

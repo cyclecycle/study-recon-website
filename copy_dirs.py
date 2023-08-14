@@ -9,7 +9,10 @@ from_dir = "../grounded-dev/recon-tools/data/workspaces"
 to_dir = "reports"
 
 # List of dirs to copy
-dirs = ["unleashing-blockchain-s-transformative-potential"]
+dirs = [
+    "unleashing-blockchain-s-transformative-potential",
+    "mindfulness-a-stress-reducing-workplace-practice",
+]
 dirs = [os.path.join(from_dir, d) for d in dirs]
 
 for d in dirs:
@@ -19,6 +22,7 @@ for d in dirs:
         else:
             print(f"Directory {os.path.basename(d)} already exists. Skipping.")
             continue
+    shutil.copytree(d, os.path.join(to_dir, os.path.basename(d)))
 
 # Remove all json files except report_config.json
 for dirpath, dirnames, filenames in os.walk(to_dir):
