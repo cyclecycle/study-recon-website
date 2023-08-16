@@ -57,15 +57,16 @@ def make_sources_description(sources):
     sources = " ".join(sources).lower()
     desc = []
     if "scholar" or "ieee" in sources:
-        desc.append("Academic Research")
+        desc.append("academic research")
     if "google" in sources:
-        desc.append("Web Articles")
+        desc.append("web articles")
+    desc[0] = desc[0].capitalize()
     if len(desc) == 1:
         return desc[0]
     elif len(desc) == 2:
-        return " and ".join(desc)
+        return f"{desc[0]} and {desc[1]}"
     else:
-        return ", ".join(desc[:-1]) + ", and " + desc[-1]
+        return f"{', '.join(desc[:-1])}, and {desc[-1]}"
 
 
 def make_report_page(config):
