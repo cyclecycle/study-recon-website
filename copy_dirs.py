@@ -5,13 +5,22 @@ import shutil
 
 overwrite = False
 
-from_dir = "../grounded-dev/recon-tools/data/workspaces"
+from_dir = "../grounded-dev/recon-tools/data/workspaces-gallery"
 to_dir = "reports"
 
 # List of dirs to copy
 dirs = [
-    "unleashing-blockchain-s-transformative-potential",
-    "mindfulness-a-stress-reducing-workplace-practice",
+    "advancements-in-superconductors-promising-applications",
+    "mindfulness-for-mental-well-being",
+    "ai-and-machine-learning-in-healthcare",
+    "climate-change-and-global-food-security",
+    "work-life-balance-and-employee-satisfaction",
+    "quantum-computing-market-analysis",
+    "advancements-in-endometriosis-treatments",
+    "covid-19-and-the-future-of-remote-work",
+    "gender-diversity-and-company-performance",
+    "virtual-reality-in-education-impact-analysis",
+    "childhood-nutrition-and-long-term-health",
 ]
 dirs = [os.path.join(from_dir, d) for d in dirs]
 

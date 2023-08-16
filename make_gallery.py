@@ -27,7 +27,7 @@ def make_links(config, dir_name):
         download_links += make_list_item(
             make_html_link(
                 f"../{dir_name}/{f}",
-                f"Download Search Results (PDF)",
+                f"Download Results (PDF)",
                 new_tab=True,
             )
         )
@@ -41,7 +41,7 @@ def make_links(config, dir_name):
         html_links += make_list_item(
             make_html_link(
                 f"../{dir_name}/{f}",
-                f"View Search Results (HTML)",
+                f"View Results",
                 new_tab=False,
             )
         )
@@ -80,20 +80,6 @@ def make_report_page(config):
 
 
 def make_gallery_links(configs):
-    """<a
-      href="./reports/pages/quantum-computing-market-analysis.html"
-      class="report-link"
-    >
-      <div class="report-item">
-        <h3>Quantum Computing Market Analysis</h3>
-        <img
-          src="./reports/search_results.png"
-          alt="Report 1 Thumbnail"
-          style="width: 100%; height: 100%; object-fit: contain"
-          class="report-image"
-        />
-      </div>
-    </a>"""
     links = ""
     for config in configs:
         directory = config["directory"]
@@ -111,7 +97,6 @@ def make_gallery_links(configs):
             <img
               src="./reports/{dir_name}/{png}"
               alt="Report 1 Thumbnail"
-              style="width: 100%; height: 100%; object-fit: contain"
               class="report-image"
             />
           </div>
@@ -122,7 +107,10 @@ def make_gallery_links(configs):
 def main():
     # Iterate over all directories in "reports"
     configs = []
-    for directory in os.listdir("reports"):
+    front_page_gallery_links = []
+    directories = os.listdir("reports")
+    directories = sorted(directories)
+    for directory in directories:
         dir_path = os.path.join("reports", directory)
         if os.path.isdir(dir_path):
             config_path = os.path.join(dir_path, "report_config.json")
@@ -133,6 +121,33 @@ def main():
             config["directory"] = dir_path
             configs.append(config)
             make_report_page(config)
+            front_page_gallery_links.append(
+                {
+                    "link": f"./reports/pages/{directory}.html",
+                    "src": f"./reports/{directory}/{config['output_files']['search_results_png']}",
+                    "alt": f"{config['title']} Report Screenshot",
+                }
+            )
+
+    # Embed links into js
+    with open("js/randomise_screenshot_template.js", "r") as file:
+        template = file.read()
+    template = template.replace(
+        "{ gallery_links }", json.dumps(front_page_gallery_links, indent=2)
+    )
+    with open("js/randomise_screenshot.js", "w") as file:
+        file.write(template)
+
+    default_link = front_page_gallery_links[0]["link"]
+    default_src = front_page_gallery_links[0]["src"]
+    default_alt = front_page_gallery_links[0]["alt"]
+    with open("index.html", "r") as file:
+        template = file.read()
+    template = template.replace("{default_report_link}", default_link)
+    template = template.replace("{default_report_img}", default_src)
+    template = template.replace("{default_report_alt}", default_alt)
+    with open("index.html", "w") as file:
+        file.write(template)
 
     # Make the gallery page
     with open("gallery-template.html", "r") as file:
