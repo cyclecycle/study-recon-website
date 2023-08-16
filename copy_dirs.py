@@ -3,7 +3,7 @@
 import os
 import shutil
 
-overwrite = False
+overwrite = True
 
 from_dir = "../grounded-dev/recon-tools/data/workspaces-gallery"
 to_dir = "reports"

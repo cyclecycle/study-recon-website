@@ -66,6 +66,7 @@ def make_report_page(config):
     name = title.lower().replace(" ", "-")
     page_content = template.replace("{report_title}", title)
     page_content = page_content.replace("{report_prompt}", config["prompt"])
+    page_content = page_content.replace("{search_sources}", ", ".join(config["search_sources"]))
 
     links = make_links(config, dir_name)
     download_links, html_links = links["download_links"], links["html_links"]
