@@ -52,6 +52,22 @@ def make_links(config, dir_name):
     }
 
 
+def make_sources_description(sources):
+    """E.g., Academic Research and Web Articles"""
+    sources = " ".join(sources).lower()
+    desc = []
+    if "scholar" or "ieee" in sources:
+        desc.append("Academic Research")
+    if "google" in sources:
+        desc.append("Web Articles")
+    if len(desc) == 1:
+        return desc[0]
+    elif len(desc) == 2:
+        return " and ".join(desc)
+    else:
+        return ", ".join(desc[:-1]) + ", and " + desc[-1]
+
+
 def make_report_page(config):
     # Read the report_config.json file
     directory = config["directory"]
@@ -66,7 +82,9 @@ def make_report_page(config):
     name = title.lower().replace(" ", "-")
     page_content = template.replace("{report_title}", title)
     page_content = page_content.replace("{report_prompt}", config["prompt"])
-    page_content = page_content.replace("{search_sources}", ", ".join(config["search_sources"]))
+    page_content = page_content.replace(
+        "{search_sources}", make_sources_description(config["search_sources"])
+    )
 
     links = make_links(config, dir_name)
     download_links, html_links = links["download_links"], links["html_links"]
