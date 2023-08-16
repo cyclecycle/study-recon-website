@@ -314,6 +314,8 @@ nav a.active {
 
 .screenshot:hover {
   transform: scale(1.05);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .example-report-header {
@@ -361,11 +363,11 @@ nav a.active {
 .report-item:hover {
   background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .report-item:hover .report-image {
   transform: scale(1.05);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .form {
